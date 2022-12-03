@@ -20,7 +20,7 @@ pipeline {
             /kaniko/executor --dockerfile `pwd`/Dockerfile \
                              --context `pwd` \
                              --destination=w491994/kube:${BUILD_NUMBER}
-                              --skip-tls-verify
+                             --skip-tls-verify
             '''
           }
         }
