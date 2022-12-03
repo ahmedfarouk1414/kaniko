@@ -18,7 +18,7 @@ spec:
       - name: mydockercredentaials
         mountPath: /kaniko/.docker
   volumes:
-    - name: kaniko-secret
+    - name: mydockercredentaials
       secret:
         secretName: mydockercredentaials
         items:
