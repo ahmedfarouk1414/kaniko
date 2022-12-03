@@ -8,19 +8,19 @@ spec:
     image: joshendriks/alpine-k8s
     command:
     - /bin/cat
-    tty: true    
+    tty: true
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
     command:
     - /busybox/cat
     tty: true
     volumeMounts:
-      - name: kaniko-secret
+      - name: mydockercredentaials
         mountPath: /kaniko/.docker
   volumes:
     - name: kaniko-secret
       secret:
-        secretName: regcred
+        secretName: mydockercredentaials
         items:
           - key: .dockerconfigjson
             path: config.json
